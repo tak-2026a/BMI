@@ -1,0 +1,31 @@
+# BMI Classroom · BMI 雙語課堂
+
+從 index.html 開始。整個資料夾可以直接放到 GitHub Pages，無須安裝套件。
+
+## 頁面
+
+- index.html：介紹 BMI 用途與限制，透過數線滑桿或身高（cm）／體重（kg）輸入切換單張角色圖與英文說明。計算結果同步滑桿；超出刻度會自動延長。分類使用未四捨五入的值。
+- process.html：放入 Start、Input height、Input weight、Calculate 四個積木。輸入順序可以互換；過早計算或沒有先開始會要求確認後重試。
+- ifelse.html：六個固定判斷條件，英文在前、中文在後，數線互動。只允許 < 18.5 → < 24 → < 27，或 ≥ 27 → ≥ 24 → ≥ 18.5。成功後顯示完整流程圖入口。
+- result.html：依兩種輸入順序及兩種判斷順序產生四種可能的完整流程圖，可下載 PNG 或 SVG，附 draw.io 連結供學生仿畫。
+
+跨頁順序使用網址參數傳遞，不依賴 localStorage，因此直接以本機檔案開啟也可傳递。直接開啟 ifelse.html 可以練習，但要先完成 process 活動才能產生個人完整流程圖。result.html 缺少有效參數時會引導回活動。
+
+## 圖片與檔案
+
+請一併上傳所有 HTML、JS、lesson.css、bmi.css、assets/ 目錄。四張角色圖以內建 image_gen 產生，存放 assets/underweight.png、normal.png、overweight.png、obesity.png。完整生成提示保存在 assets/prompts.json。圖片僅為詞彙教學示意，不應依外觀判定 BMI。
+
+## 驗證
+
+已檢查兩種合法輸入順序、提前計算拒絕、四種最終流程圖組合、跨頁參數、圖片與檔案連結。尚未以瀏覽器實際驗證畫面與 PNG 下載。
+
+## 部署
+
+將上述檔案上傳至 GitHub repository 根目錄，在 Settings → Pages 選 Deploy from a branch、main、/ (root)。本工作區尚未連結 GitHub，尚未發布。
+
+## 分類
+
+臺灣成人：BMI < 18.5 Underweight；18.5 ≤ BMI < 24 Normal；24 ≤ BMI < 27 Overweight；BMI ≥ 27 Obesity。Obesity 為肥胖，不全等同重度肥胖。此組分類不適用於兒童及青少年健康判定。
+來源：https://www.hpa.gov.tw/Pages/List.aspx?nodeid=1757
+
+首頁互動：bmi.js 與 bmi.css。已檢查 BMI 分界、170 cm / 60 kg 換算、滑桿同步、無效輸入、刻度擴充。瀏覽器視覺效果尚未實測。
