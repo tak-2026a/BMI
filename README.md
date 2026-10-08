@@ -4,10 +4,10 @@
 
 ## 頁面
 
-- index.html：介紹 BMI 用途與限制，透過數線滑桿或身高（cm）／體重（kg）輸入切換單張角色圖與英文說明。計算結果同步滑桿；超出刻度會自動延長。分類使用未四捨五入的值。
+- index.html：介紹 BMI，透過數線滑桿或身高（m）／體重（kg）輸入切換單張角色圖與英文說明。公式為 BMI = kg ÷ m²；計算結果同步滑桿。分類使用未四捨五入的值。
 - process.html：放入 Start、Input height、Input weight、Calculate 四個積木。輸入順序可以互換；過早計算或沒有先開始會要求確認後重試。
 - ifelse.html：六個固定判斷條件，英文在前、中文在後，數線互動。只允許 < 18.5 → < 24 → < 27，或 ≥ 27 → ≥ 24 → ≥ 18.5。成功後顯示完整流程圖入口。
-- result.html：依兩種輸入順序及兩種判斷順序產生四種可能的完整流程圖，可下載 PNG 或 SVG，附 draw.io 連結供學生仿畫。
+- result.html：依兩種輸入順序及兩種判斷順序產生完整流程圖。18.5、24、27 的判斷在菱形中以單行顯示；左側浮動按鈕可放大或還原網頁。可下載 PNG 或 SVG，並到 draw.io 仿畫。
 
 跨頁順序使用網址參數傳遞，不依賴 localStorage，因此直接以本機檔案開啟也可傳递。直接開啟 ifelse.html 可以練習，但要先完成 process 活動才能產生個人完整流程圖。result.html 缺少有效參數時會引導回活動。
 
@@ -21,14 +21,14 @@
 
 ## 部署
 
-將上述檔案上傳至 GitHub repository 根目錄，在 Settings → Pages 選 Deploy from a branch、main、/ (root)。本工作區尚未連結 GitHub，尚未發布。
+GitHub repository：https://github.com/tak-2026a/BMI 。GitHub Pages 若已啟用，提交到 main 後會依設定部署。
 
 ## 分類
 
 臺灣成人：BMI < 18.5 Underweight；18.5 ≤ BMI < 24 Normal；24 ≤ BMI < 27 Overweight；BMI ≥ 27 Obesity。Obesity 為肥胖，不全等同重度肥胖。此組分類不適用於兒童及青少年健康判定。
 來源：https://www.hpa.gov.tw/Pages/List.aspx?nodeid=1757
 
-首頁互動：bmi.js 與 bmi.css。已檢查 BMI 分界、170 cm / 60 kg 換算、滑桿同步、無效輸入、刻度擴充。瀏覽器視覺效果尚未實測。
+首頁互動：bmi.js 與 bmi.css。已檢查 BMI 分界、1.70 m / 60 kg 換算、滑桿同步、無效輸入、刻度擴充。瀏覽器視覺效果尚未實測。
 
 ## 課堂操作更新
 

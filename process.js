@@ -1,5 +1,5 @@
 'use strict';
-const labels={start:'Start 開始',height:'Input height (cm) 輸入身高（公分）',weight:'Input weight (kg) 輸入體重',calc:'Calculate 計算<br>BMI = kg ÷ (cm ÷ 100)²'};
+const labels={start:'Start 開始',height:'Input height (m) 輸入身高（公尺）',weight:'Input weight (kg) 輸入體重',calc:'Calculate 計算<br>BMI = kg ÷ m²'};
 let sequence=[];const el=id=>document.getElementById(id);
 function validNext(s,id){return s.length===0?id==='start':s.length<3?['height','weight'].includes(id)&&!s.includes(id):s.length===3&&id==='calc'}
 function paint(){el('process-chain').innerHTML=sequence.length?sequence.map((id,i)=>(i?'<div class="arrow">↓</div>':'')+`<div class="flow-piece ${id==='start'?'start':id==='calc'?'calc':'input'}">${labels[id]}</div>`).join(''):'Drop or click Start · 拖入或點選 Start 開始';document.querySelectorAll('[data-piece]').forEach(b=>b.disabled=sequence.includes(b.dataset.piece));el('drawing-step').hidden=sequence.length!==4;el('drawing-done').checked=false;el('next').disabled=true;el('process-status').textContent=sequence.length===4?'Correct! Draw it now. · 排列正確！請先完成下方繪圖任務。':`Step ${sequence.length+1} / 4 · ${sequence.length===0?'先放入 Start 開始':sequence.length<3?'請加入尚未輸入的身高或體重':'最後放入 Calculate 計算公式'}`}
