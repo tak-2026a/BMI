@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Build in Scratch · 製作 BMI 計算器</title>
+  <link rel="stylesheet" href="lesson.css">
+  <link rel="stylesheet" href="scratch.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Learning steps 教學步驟">
+    <a href="index.html">01 Meet BMI 認識 BMI</a>
+    <a href="process.html">02 Input &amp; Calculate 輸入與計算</a>
+    <a href="ifelse.html">03 If / Else 條件判斷</a>
+    <a id="flow-link" href="result.html">04 Flowchart 完整流程圖</a>
+    <strong>05 Scratch BMI calculator</strong>
+  </nav>
+  <main>
+    <header class="scratch-hero">
+      <div>
+        <span class="step-chip">STEP 05 / PROGRAM IT</span>
+        <h1>Build your BMI calculator<br><span>用 Scratch 寫出你的流程圖</span></h1>
+        <p>Match each flowchart step with a Scratch block. · 把流程圖的每一步，換成 Scratch 方塊。</p>
+      </div>
+      <img src="assets/normal.png" alt="Friendly illustrated classroom character">
+    </header>
+
+    <div id="learning-order" class="notice" aria-live="polite"></div>
+
+    <section class="mapping" aria-labelledby="inputs-title">
+      <div class="mapping-head"><span class="mapping-number">01</span><div><h2 id="inputs-title">Input · 輸入資料</h2><p>Flowchart parallelograms → Scratch ask + set · 流程圖的輸入框對應 Scratch 的詢問與設定變數。</p></div></div>
+      <div class="example-row">
+        <div class="flow-cue" id="input-flow-cue"><span>FLOWCHART · 流程圖</span><strong id="flow-weight">Input weight (kg)</strong><strong id="flow-height">Input height (m)</strong></div>
+        <div class="mapping-arrow" aria-hidden="true">→</div>
+        <div class="scratch-cue" id="input-scratch-cue"><span>SCRATCH · 方塊</span><img id="block-weight" src="assets/scratch-input-weight.png" alt="Scratch ask input weight and wait; set weight to answer"><img id="block-height" src="assets/scratch-input-height.png" alt="Scratch ask input height and wait; set height to answer"></div>
+      </div>
+      <div class="help-card"><img src="assets/scratch-variables.png" alt="Scratch variables weight, height, and BMI"><p><strong>Create three variables · 建立三個變數：</strong>weight、height、BMI。<br>Save <code>answer</code> immediately after each <code>ask</code>; the next answer replaces the previous one. · 每次詢問後立刻儲存回答，否則下一次回答會覆蓋它。<br><strong>Height uses metres (m). · 身高輸入公尺。</strong></p></div>
+    </section>
+
+    <section class="mapping" aria-labelledby="formula-title">
+      <div class="mapping-head"><span class="mapping-number">02</span><div><h2 id="formula-title">Calculate · 計算 BMI</h2><p>Flowchart process rectangle → Scratch operators + set BMI · 計算框對應運算方塊與設定 BMI。</p></div></div>
+      <div class="example-row">
+        <div class="flow-cue"><span>FLOWCHART · 流程圖</span><strong>BMI = weight (kg) ÷ height (m)²</strong></div>
+        <div class="mapping-arrow" aria-hidden="true">→</div>
+        <div class="scratch-cue"><span>SCRATCH · 方塊</span><img src="assets/scratch-operators.png" alt="Scratch addition, subtraction, multiplication, and division operators"><img src="assets/scratch-formula.png" alt="Scratch weight divided by height times height, placed into set BMI block"></div>
+      </div>
+      <p class="key-point"><strong>Build the denominator first · 先組合除數：</strong><code>height × height</code>，再把它放進 <code>weight ÷ (height × height)</code>，最後設定 <code>BMI</code>。</p>
+    </section>
+
+    <section class="mapping" aria-labelledby="decisions-title">
+      <div class="mapping-head"><span class="mapping-number">03</span><div><h2 id="decisions-title">Decide · 判斷分類</h2><p>Flowchart diamonds → Scratch if / else · 判斷菱形對應 Scratch 的如果／否則結構。</p></div></div>
+      <div class="example-row">
+        <div class="flow-cue"><span>FLOWCHART · 流程圖</span><strong id="decision-example">BMI &lt; 18.5</strong><small>True → one category<br>False → next decision</small></div>
+        <div class="mapping-arrow" aria-hidden="true">→</div>
+        <div class="scratch-cue"><span>SCRATCH · 方塊</span><img src="assets/scratch-ifelse.png" alt="Scratch if then else block, less than comparison operator, and BMI variable"></div>
+      </div>
+      <p class="key-point" id="decision-guidance">Put a comparison in the hexagonal slot. Nest another if / else inside else until all four categories have an output. · 把比較條件放入六角形格子；在 else 裡接下一個 if / else，直到四類都有結果。</p>
+    </section>
+
+    <section class="panel scratch-task" aria-labelledby="task-title">
+      <h2 id="task-title">Your mission · 完成 BMI 計算器</h2>
+      <p>Open Scratch and build the whole program yourself. · 打開 Scratch，依你的流程圖自行完成整支程式。</p>
+      <ol>
+        <li>Start with the green flag. · 用「當綠旗被點擊」開始。</li>
+        <li>Ask for weight (kg) and height (m), then store both answers. · 詢問並儲存體重、身高。</li>
+        <li>Calculate and store <code>BMI = weight ÷ (height × height)</code>. · 算出 BMI。</li>
+        <li>Use if / else to output Underweight, Normal, Overweight, or Obesity. · 判斷並顯示四種分類。</li>
+        <li>Test different numbers, especially BMI 18.5, 24, and 27. · 測試三個分界值。</li>
+      </ol>
+      <a class="btn primary" href="https://scratch.mit.edu/projects/editor/" target="_blank" rel="noopener">Open Scratch editor · 開啟 Scratch 編輯器 ↗</a>
+      <p class="small-note">The images show individual blocks. Assemble them into your own working program. · 圖片是方塊提示，請自行拼成能運作的程式。</p>
+    </section>
+  </main>
+  <script src="scratch.js"></script>
+</body>
+</html>

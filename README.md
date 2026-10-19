@@ -8,12 +8,13 @@
 - process.html：放入 Start、Input height (m)、Input weight、BMI 公式四個積木。身高積木只顯示英文；處理積木只顯示 `BMI = weight (kg) ÷ height (m)²`。輸入順序可以互換；過早計算或沒有先開始會要求確認後重試。
 - ifelse.html：六個固定判斷條件，英文在前、中文在後，數線互動。只允許 < 18.5 → < 24 → < 27，或 ≥ 27 → ≥ 24 → ≥ 18.5。成功後顯示完整流程圖入口。
 - result.html：依兩種輸入順序及兩種判斷順序產生完整流程圖。身高輸入框只顯示 `Input height (m)`，體重輸入框恢復 `Input weight (kg)`；輸出框不顯示 `Output 輸出`。分支使用 True／False，頁面底部提示可簡寫為 T／F。由小到大判斷時，第二個菱形（原本 `< 24`）留白，滑鼠移入會提示學生補上條件；由大到小判斷仍完整顯示。左側浮動按鈕可放大或還原網頁。可下載 PNG 或 SVG，並到 draw.io 仿畫。
+- scratch.html：完成流程圖並勾選確認後進入。用 Scratch 方塊圖片對照輸入、BMI 計算、if / else 判斷；保留學生選擇的輸入及判斷順序。學生最後自行完成 Scratch BMI 計算器，測試 18.5、24、27 的分類邊界。
 
 跨頁順序使用網址參數傳遞，不依賴 localStorage，因此直接以本機檔案開啟也可傳递。直接開啟 ifelse.html 可以練習，但要先完成 process 活動才能產生個人完整流程圖。result.html 缺少有效參數時會引導回活動。
 
 ## 圖片與檔案
 
-請一併上傳所有 HTML、JS、lesson.css、bmi.css、assets/ 目錄。四張角色圖以內建 image_gen 產生，存放 assets/underweight.png、normal.png、overweight.png、obesity.png。完整生成提示保存在 assets/prompts.json。圖片僅為詞彙教學示意，不應依外觀判定 BMI。
+請一併上傳所有 HTML、JS、CSS、assets/ 目錄。四張角色圖以內建 image_gen 產生，存放 assets/underweight.png、normal.png、overweight.png、obesity.png。完整生成提示保存在 assets/prompts.json。Scratch 教學使用老師提供的六張方塊截圖，存放 assets/scratch-*.png。角色圖片僅為詞彙教學示意，不應依外觀判定 BMI。
 
 ## 驗證
 

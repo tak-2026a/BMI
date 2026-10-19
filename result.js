@@ -19,3 +19,13 @@ zoomControls.innerHTML='<button type="button" id="zoom-in" aria-label="Enlarge p
 document.body.append(zoomControls);
 document.getElementById('zoom-in').addEventListener('click',()=>document.body.classList.add('result-zoom'));
 document.getElementById('zoom-reset').addEventListener('click',()=>document.body.classList.remove('result-zoom'));
+
+const flowchartDone=document.getElementById('flowchart-done');
+const scratchNext=document.getElementById('scratch-next');
+document.getElementById('scratch-gate').hidden=!valid;
+flowchartDone.addEventListener('change',()=>{scratchNext.disabled=!flowchartDone.checked});
+scratchNext.addEventListener('click',()=>{
+  if(valid&&flowchartDone.checked){
+    location.href=`scratch.html?inputs=${inputs}&direction=${direction}`;
+  }
+});
