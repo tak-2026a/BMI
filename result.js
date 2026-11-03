@@ -26,6 +26,6 @@ document.getElementById('scratch-gate').hidden=!valid;
 flowchartDone.addEventListener('change',()=>{scratchNext.disabled=!flowchartDone.checked});
 scratchNext.addEventListener('click',()=>{
   if(valid&&flowchartDone.checked){
-    location.href=`scratch.html?inputs=${inputs}&direction=${direction}`;
+    window.open('https://taksito.github.io/flowchart-work/','_blank','noopener');
   }
 });
